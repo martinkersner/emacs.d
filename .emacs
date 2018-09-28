@@ -11,6 +11,9 @@
 (require 'evil)
 (evil-mode 1)
 
+; magit
+(require 'magit)
+
 ; org mode
 (require 'org-download)
 (require 'org-bullets)
@@ -68,12 +71,25 @@
      ;(color-theme-hober)))
 
 ; prettify emacs
+(global-linum-mode t)
+(setq linum-format "%d ")
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(load-theme 'manoj-dark)
 (toggle-scroll-bar -1)
 (global-hl-line-mode +1)
 (set-face-underline-p 'highlight nil)
+(set-frame-parameter (selected-frame) 'alpha '(85 . 50))
+(add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+(set-fringe-mode '(1 . 1)) ; make left and righ fringe 1px
+(set-face-attribute 'default nil :height 75) ; set height of default font to 75
 
 ; tramp
+(require 'tramp)
+(setq tramp-default-method "ssh")
+(setq-default explicit-shell-file-name "/bin/bash")
 (setq tramp-shell-prompt-pattern "^[^$>\n]*[#$%>] *\\(\[[0-9;]*[a-zA-Z] *\\)*")
 (setq tramp-verbose 10)
+
+;; utilities
+(setq vc-follow-symlinks t) ; follow symlinks without questioning
