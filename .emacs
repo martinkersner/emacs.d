@@ -6,8 +6,21 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
+; user defined lisp functions are stored in lisp directory
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
+; Enable CTRL-u for going upward
+; Must be run before loading evil mode
+; Evil mode is loaded even in evil-leader
+(setq evil-want-C-u-scroll t)
+
+; vim-like leader
+; need to be defined before evil mode
+(require 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-key "e" 'find-file)
+
 ; evil mode
-(setq evil-want-C-u-scroll t) ; enable CTRL-u for going upward
 (require 'evil)
 (evil-mode 1)
 
@@ -51,7 +64,7 @@
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(custom-enabled-themes (quote (wombat)))
- '(explicit-shell-file-name "/bin/zsh")
+ '(explicit-shell-file-name "/bin/sh")
  '(package-selected-packages
    (quote
     (neotree multiple-cursors magit org-bullets org-download evil sml-mode))))
@@ -82,7 +95,7 @@
 (set-frame-parameter (selected-frame) 'alpha '(85 . 50))
 (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
 (set-fringe-mode '(1 . 1)) ; make left and righ fringe 1px
-(set-face-attribute 'default nil :height 75) ; set height of default font to 75
+(set-face-attribute 'default nil :height 80) ; set height of default font to 80
 
 ; tramp
 (require 'tramp)
