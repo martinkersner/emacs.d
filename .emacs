@@ -32,12 +32,16 @@
 (require 'magit)
 
 ; org mode
+(require 'org)
 (require 'org-download)
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (setq org-image-actual-width nil)
 (setq org-todo-keywords
   '((sequence "TODO" "INPROGRESS" "|" "DONE" "HALTED")))
+(define-key org-mode-map (kbd "C-c C-v") 'org-show-todo-tree)
+(define-key org-mode-map (kbd "C-c a") 'org-agenda)
+
 
 ; other packages
 (require 'multiple-cursors)
