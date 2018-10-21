@@ -122,3 +122,39 @@
 
 ;; utilities
 (setq vc-follow-symlinks t) ; follow symlinks without questioning
+
+(require 'ox-latex)
+(add-to-list 'org-latex-classes
+             '("beamer"
+               "\\documentclass\[presentation\]\{beamer\}"
+               ("\\section\{%s\}" . "\\section*\{%s\}")
+               ("\\subsection\{%s\}" . "\\subsection*\{%s\}")
+               ("\\subsubsection\{%s\}" . "\\subsubsection*\{%s\}")))
+
+
+; display remote file
+(defun org-global-props (&optional property buffer)
+  "Get the plists of global org properties of current buffer."
+  (with-current-buffer (or buffer (current-buffer))
+    (org-element-map (org-element-parse-buffer) 'keyword (lambda (el) (when (string-match property (org-element-property :key el)) el)))))
+
+(defun org-property-value (property-name)
+  (org-element-property :value (car (org-global-props property-name))))
+
+(defun open-with-tramp ()
+  (interactive)
+  (let ((filename (buffer-substring-no-properties (line-beginning-position) (line-end-position))))
+    (org-element-property :value (car (org-global-props "CONNECTION")))
+    (find-file-other-window
+     (concat
+      "/"
+      (org-property-value "CONNECTION")
+      ":"
+      (org-property-value "SERVER")
+      ":"
+      (org-property-value "ROOT_DIR")
+      filename))
+    (evil-window-prev 1)
+    ))
+
+(define-key org-mode-map (kbd "C-c o") 'open-with-tramp)
