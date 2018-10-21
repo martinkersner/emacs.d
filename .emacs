@@ -91,7 +91,15 @@
      ;(color-theme-initialize)
      ;(color-theme-hober)))
 
-; prettify emacs
+; PRETTIFY EMACS
+; powerline
+(require 'smart-mode-line)
+(setq powerline-arrow-shape 'curve)
+(setq powerline-default-separator-dir '(right . left))
+;; These two lines you really need.
+(setq sml/theme 'powerline)
+(sml/setup)
+
 (global-linum-mode t)
 (setq linum-format "%d ")
 (menu-bar-mode -1)
