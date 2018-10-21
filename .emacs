@@ -91,6 +91,10 @@
      ;(color-theme-initialize)
      ;(color-theme-hober)))
 
+; FILE MANAGEMENT
+;; don't make backup files
+(setq make-backup-files nil)
+
 ; PRETTIFY EMACS
 ; powerline
 (require 'smart-mode-line)
