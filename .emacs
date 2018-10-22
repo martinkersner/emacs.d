@@ -3,12 +3,45 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 
-; Disable the splash screen
-(setq inhibit-splash-screen t)
-
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+
+; Activate installed packages
 (package-initialize)
+
+(defun ensure-package-installed (&rest packages)
+  "Assure every package is installed, ask for installation if it’s not.
+   Return a list of installed packages or nil for every skipped package."
+  (mapcar
+   (lambda (package)
+     (if (package-installed-p package)
+         nil
+       (if (y-or-n-p (format "Package %s is missing. Install it? " package))
+           (package-install package)
+         package)))
+   packages))
+
+(or (file-exists-p package-user-dir)
+    (package-refresh-contents))
+
+; Install required packages
+(ensure-package-installed
+  'evil-leader
+  'evil
+  'magit
+  'org
+  'org-download
+  'org-bullets
+  'multiple-cursors
+  'neotree
+  'smart-mode-line
+  'smart-mode-line-powerline-theme
+  'tramp
+  'virtualenvwrapper
+  )
+
+; Disable the splash screen
+(setq inhibit-splash-screen t)
 
 ; user defined lisp functions are stored in lisp directory
 (add-to-list 'load-path "~/.emacs.d/lisp/")
@@ -163,7 +196,8 @@
 
 (define-key org-mode-map (kbd "C-c o") 'open-with-tramp)
 
-; python virtual environment(require 'virtualenvwrapper)
+; python virtual environment
+(require 'virtualenvwrapper)
 (venv-initialize-interactive-shells) ;; if you want interactive shell support
 (venv-initialize-eshell) ;; if you want eshell support
 ;; note that setting `venv-location` is not necessary if you
