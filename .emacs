@@ -38,6 +38,7 @@
   'smart-mode-line-powerline-theme
   'tramp
   'virtualenvwrapper
+  'ag
   )
 
 ; Disable the splash screen
@@ -204,3 +205,6 @@
 ;; use the default location (`~/.virtualenvs`), or if the
 ;; the environment variable `WORKON_HOME` points to the right place
 (setq venv-location "/home/martin/.virtualenvs")
+
+; ag
+(require 'ag)
