@@ -39,6 +39,7 @@
   'tramp
   'virtualenvwrapper
   'ag
+  'projectile
   )
 
 ; Disable the splash screen
@@ -206,5 +207,14 @@
 ;; the environment variable `WORKON_HOME` points to the right place
 (setq venv-location "/home/martin/.virtualenvs")
 
-; ag
+; TOOLS
+; AG
+; M-x ag-project
 (require 'ag)
+
+; PROJECTILE
+; C-c p f
+(require 'projectile)
+(projectile-mode +1)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
