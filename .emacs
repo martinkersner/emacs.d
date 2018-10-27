@@ -105,6 +105,11 @@
 (evil-define-key 'normal neotree-mode-map (kbd "A") 'neotree-stretch-toggle)
 (evil-define-key 'normal neotree-mode-map (kbd "H") 'neotree-hidden-file-toggle)
 
+(define-key evil-normal-state-map (kbd "C-h") #'evil-window-left)
+(define-key evil-normal-state-map (kbd "C-j") #'evil-window-down)
+(define-key evil-normal-state-map (kbd "C-k") #'evil-window-up)
+(define-key evil-normal-state-map (kbd "C-l") #'evil-window-right)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
