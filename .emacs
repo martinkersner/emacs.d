@@ -62,6 +62,12 @@
 ; evil mode
 (require 'evil)
 (evil-mode 1)
+;; treat an Emacs symbol as a word
+(with-eval-after-load 'evil
+    (defalias #'forward-evil-word #'forward-evil-symbol))
+;; keep search highlighted
+;; TODO add to leader-space M-x lazy-highlight-cleanup
+(setq lazy-highlight-cleanup nil)
 
 ; magit
 (require 'magit)
