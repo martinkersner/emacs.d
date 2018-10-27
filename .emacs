@@ -231,6 +231,13 @@
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+;; Insert debug line to Python
+(defun my/debug-python ()
+  (interactive)
+  (indent-relative)
+  (insert "from IPython import embed; embed();  # TODO debug")
+  )
+(define-key evil-normal-state-map (kbd "C-c C-d") #'my/debug-python)
 ;; relative numbers
 (require 'linum-relative)
 (linum-on)
