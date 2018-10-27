@@ -164,6 +164,16 @@
 (add-to-list 'default-frame-alist '(alpha . (85 . 50)))
 (set-fringe-mode '(1 . 1)) ; make left and righ fringe 1px
 (set-face-attribute 'default nil :height 80) ; set height of default font to 80
+;; Maximize buffer
+;; https://gist.github.com/mads-hartmann/3402786
+(defun toggle-maximize-buffer ()
+  (interactive)
+  (if (= 1 (length (window-list)))
+      (jump-to-register '_)
+    (progn
+      (window-configuration-to-register '_)
+      (delete-other-windows))))
+(global-set-key (kbd "C-c C-z") 'toggle-maximize-buffer)
 
 ; tramp
 (require 'tramp)
