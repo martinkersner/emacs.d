@@ -248,6 +248,22 @@
   (insert "from IPython import embed; embed();  # TODO debug")
   )
 (define-key evil-normal-state-map (kbd "C-c C-d") #'my/debug-python)
+
+;; pdflatex for MacOS
+(getenv "PATH")
+ (setenv "PATH"
+(concat
+ "/Library/TeX/texbin" ":"
+
+(getenv "PATH")))
+
+;; reveal
+(require 'ox-reveal)
+
+
 ;; relative numbers
 (require 'linum-relative)
 (linum-on)
+
+;; remove trainling whitespace before saving buffer
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
