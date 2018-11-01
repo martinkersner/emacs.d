@@ -260,10 +260,10 @@
 ;; reveal
 (require 'ox-reveal)
 
-
 ;; relative numbers
 (require 'linum-relative)
-(linum-on)
+(linum-relative-mode)
+(setq linum-relative-current-symbol "")
 
 ;; remove trainling whitespace before saving buffer
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
