@@ -241,6 +241,11 @@
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
+; Enable to run python code in org-file
+(org-babel-do-load-languages
+ 'org-babel-load-languages '((python . t)))
+
 ;; Insert debug line to Python
 (defun my/debug-python ()
   (interactive)
