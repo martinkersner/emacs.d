@@ -267,3 +267,9 @@
 
 ;; remove trainling whitespace before saving buffer
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; Python
+(require 'elpy)
+(elpy-enable)
+(setq python-shell-completion-native-enable nil)
+(setq elpy-shell-echo-input nil)
+(define-key python-mode-map (kbd "C-]") #'elpy-goto-definition)
