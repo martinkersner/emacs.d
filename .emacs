@@ -143,13 +143,11 @@
 ;; don't make backup files
 (setq make-backup-files nil)
 
-; PRETTIFY EMACS
-; powerline
+;; PRETTIFY EMACS
 (require 'smart-mode-line)
 (setq powerline-arrow-shape 'curve)
 (setq powerline-default-separator-dir '(right . left))
-;; These two lines you really need.
-(setq sml/theme 'powerline)
+(setq sml/theme 'dark)
 (sml/setup)
 
 (global-linum-mode t)
