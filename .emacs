@@ -42,6 +42,9 @@
   'projectile
   'linum-relative
   'highlight
+  'elpy
+  'yasnippet
+  'yasnippet-snippets
   )
 
 ; Disable the splash screen
@@ -277,3 +280,14 @@
 (setq elpy-shell-echo-input nil)
 (define-key python-mode-map (kbd "C-]") #'elpy-goto-definition)
 (elpy-set-test-runner #'elpy-test-pytest-runner)
+
+
+;; abbreavitions
+(load "~/.emacs.d/lisp/abbrev.el")
+
+
+;; snippets
+(require 'yasnippet)
+(require 'yasnippet-snippets)
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
