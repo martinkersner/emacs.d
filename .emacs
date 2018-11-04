@@ -35,7 +35,6 @@
   'multiple-cursors
   'neotree
   'smart-mode-line
-  'smart-mode-line-powerline-theme
   'tramp
   'virtualenvwrapper
   'ag
@@ -45,6 +44,8 @@
   'elpy
   'yasnippet
   'yasnippet-snippets
+  'helm
+  'helm-projectile
   )
 
 ; Disable the splash screen
@@ -291,3 +292,14 @@
 (require 'yasnippet-snippets)
 (yas-reload-all)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
+
+
+;; helm
+(require 'helm)
+(require 'helm-projectile)
+(helm-mode 1)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-c h o") 'helm-occur)
+(global-set-key (kbd "C-c h g") 'helm-google-suggest)
