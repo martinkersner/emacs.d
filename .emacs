@@ -48,6 +48,10 @@
   'helm-projectile
   )
 
+;; paste from clipboard
+(setq x-select-enable-clipboard t)
+(global-set-key (kbd "C-S-p") 'x-clipboard-yank)
+
 ; Disable the splash screen
 (setq inhibit-splash-screen t)
 
