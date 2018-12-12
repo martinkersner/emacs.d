@@ -306,7 +306,14 @@
 (helm-mode 1)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (global-set-key (kbd "M-x") 'helm-M-x)
+;; C-c p h is better for file search
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-c h o") 'helm-occur)
 (global-set-key (kbd "C-c h g") 'helm-google-suggest)
+
+
+;; C++
+(global-set-key (kbd "<f5>") 'compile)
+;; indent curly braces same as parent statement
+(setq c-default-style "linux" c-basic-offset 2)
