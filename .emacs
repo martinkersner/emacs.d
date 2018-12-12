@@ -46,6 +46,7 @@
   'yasnippet-snippets
   'helm
   'helm-projectile
+  'evil-magit
   )
 
 ;; paste from clipboard
@@ -81,6 +82,7 @@
 
 ; magit
 (require 'magit)
+(require 'evil-magit)
 
 ; org mode
 (require 'org)
