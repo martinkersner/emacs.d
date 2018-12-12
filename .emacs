@@ -313,7 +313,12 @@
 (global-set-key (kbd "C-c h g") 'helm-google-suggest)
 
 
+;; Path completition
+(global-set-key (kbd "C-c c p") 'comint-dynamic-complete-filename)
+
 ;; C++
 (global-set-key (kbd "<f5>") 'compile)
 ;; indent curly braces same as parent statement
 (setq c-default-style "linux" c-basic-offset 2)
+;; M-x ffap == gf
+(ffap-bindings)
