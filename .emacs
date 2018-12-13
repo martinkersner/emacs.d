@@ -86,6 +86,28 @@
 (setq magit-diff-refine-hunk 'all)
 ;; Display diff of the current file C-x v =
 
+;; ediff
+;; https://oremacs.com/2015/01/17/setting-up-ediff/
+(setq magit-ediff-dwim-show-on-hunks t)
+(defmacro csetq (variable value)
+  `(funcall (or (get ',variable 'custom-set)
+                'set-default)
+            ',variable ,value))
+(csetq ediff-window-setup-function 'ediff-setup-windows-plain)
+(csetq ediff-split-window-function 'split-window-horizontally)
+(defun ora-ediff-hook ()
+  (ediff-setup-keymap)
+  (define-key ediff-mode-map "j" 'ediff-next-difference)
+  (define-key ediff-mode-map "k" 'ediff-previous-difference))
+(add-hook 'ediff-mode-hook 'ora-ediff-hook)
+(winner-mode)
+(add-hook 'ediff-after-quit-hook-internal 'winner-undo)
+
+;; quit ediff right after pressing q
+(defun disable-y-or-n-p (orig-fun &rest args)
+  (cl-letf (((symbol-function 'y-or-n-p) (lambda (prompt) t)))
+    (apply orig-fun args)))
+(advice-add 'ediff-quit :around #'disable-y-or-n-p)
 
 ; org mode
 (require 'org)
