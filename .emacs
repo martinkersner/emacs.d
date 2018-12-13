@@ -358,9 +358,17 @@
 ;; C++
 (global-set-key (kbd "<f5>") 'compile)
 ;; indent curly braces same as parent statement
-(setq c-default-style "linux" c-basic-offset 2)
+(setq c-default-style "linux" c-basic-offset 4)
 ;; M-x ffap == gf
 (ffap-bindings)
 
 ;; Windows
 ;; Rebalance windows: C-c =
+
+
+;; Bookmarks (can jump between file, unlike vim)
+;; TODO Bookmark highlighting
+;; Register a bookmark at current line and savce it to =r=
+;; C-x r <space> r
+;; Jump to a bookmark define under name =r=
+;; C-x r j r
