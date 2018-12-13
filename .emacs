@@ -80,9 +80,12 @@
 ;; TODO add to leader-space M-x lazy-highlight-cleanup
 (setq lazy-highlight-cleanup nil)
 
-; magit
+;; magit
 (require 'magit)
 (require 'evil-magit)
+(setq magit-diff-refine-hunk 'all)
+;; Display diff of the current file C-x v =
+
 
 ; org mode
 (require 'org)
