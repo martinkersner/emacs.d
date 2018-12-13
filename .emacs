@@ -293,14 +293,6 @@
 (org-babel-do-load-languages
  'org-babel-load-languages '((python . t)))
 
-;; Insert debug line to Python
-(defun my/debug-python ()
-  (interactive)
-  (indent-relative)
-  (insert "from IPython import embed; embed();  # TODO debug")
-  )
-(define-key evil-normal-state-map (kbd "C-c C-d") #'my/debug-python)
-
 ;; pdflatex for MacOS
 (getenv "PATH")
  (setenv "PATH"
