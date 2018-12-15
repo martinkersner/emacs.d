@@ -1,0 +1,5 @@
+elpa/
+eshell/
+auto-save-list/
+projectile-bookmarks.eld
+host.el
