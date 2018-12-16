@@ -54,6 +54,7 @@
 (load-user-file "general.el")
 (load-user-file "etc.el")
 (load-user-file "py.el")
+(load-user-file "cpp.el")
 
 ;; Abbreavitions
 (load-user-file "lisp/abbrev.el")
