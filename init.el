@@ -48,6 +48,9 @@
   "Load a file in current user's configuration directory"
   (load-file (expand-file-name file user-init-dir)))
 
+;; Use-package ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(ensure-package-installed 'use-package)
+
 ;; Modules
 (load-user-file "pretty.el")
 (load-user-file "host.el")
