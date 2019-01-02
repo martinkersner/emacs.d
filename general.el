@@ -75,3 +75,7 @@
 ;; Example (org-property-value "CONNECTION")
 (defun org-property-value (property-name)
   (org-element-property :value (car (org-global-props property-name))))
+
+
+;; Don't use TABs, use SPACEs instead
+(setq-default indent-tabs-mode nil)
