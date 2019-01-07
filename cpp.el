@@ -8,3 +8,9 @@
 (use-package flycheck
   :ensure t
   :init (global-flycheck-mode))
+
+;; Keep macros indented as the code around
+;; C-c C-o
+;; cpp-macro
+;; 0
+(c-set-offset (quote cpp-macro) 0 nil)
