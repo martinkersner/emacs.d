@@ -86,3 +86,7 @@
 (setq helm-semantic-fuzzy-match t
       helm-imenu-fuzzy-match    t)
 (global-set-key (kbd "C-x p") 'helm-semantic-or-imenu)
+
+;; Include _ (underscore) as a part of word
+;; Before * (asterisk search) did not work for words with underscore at the front of the word
+(modify-syntax-entry ?_ "w")
