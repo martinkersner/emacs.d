@@ -79,3 +79,10 @@
 
 ;; Don't use TABs, use SPACEs instead
 (setq-default indent-tabs-mode nil)
+
+;; Helm semantic-mode
+;; helm-semantic-or-imenu
+(semantic-mode 1)
+(setq helm-semantic-fuzzy-match t
+      helm-imenu-fuzzy-match    t)
+(global-set-key (kbd "C-x p") 'helm-semantic-or-imenu)
