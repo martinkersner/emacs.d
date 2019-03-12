@@ -14,3 +14,6 @@
 ;; cpp-macro
 ;; 0
 (c-set-offset (quote cpp-macro) 0 nil)
+
+;; cmake
+(ensure-package-installed 'cmake-mode)
