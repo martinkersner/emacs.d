@@ -130,8 +130,8 @@
 (ensure-package-installed 'projectile)
 (require 'projectile)
 (projectile-mode +1)
-(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+;;(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
+;;(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 
 ;; Yasnippet ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -156,3 +156,13 @@
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-c h o") 'helm-occur)
 (global-set-key (kbd "C-c h g") 'helm-google-suggest)
+(global-set-key (kbd "C-c p p") 'helm-projectile-switch-project)
+(global-set-key (kbd "C-c p h") 'helm-projectile)
+
+;; markdown-mode
+(ensure-package-installed 'markdown-mode)
+(require 'markdown-mode)
+
+;; shader-mode
+(ensure-package-installed 'shader-mode)
+(require 'shader-mode)
