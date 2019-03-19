@@ -115,7 +115,7 @@
 (setq tramp-default-method "ssh")
 (setq-default explicit-shell-file-name "/bin/bash")
 (setq tramp-shell-prompt-pattern "^[^$>\n]*[#$%>] *\\(\[[0-9;]*[a-zA-Z] *\\)*")
-(setq tramp-verbose 10)
+(setq tramp-verbose 1)
 
 
 ;; Ag ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
