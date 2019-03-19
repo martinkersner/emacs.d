@@ -65,7 +65,6 @@
  'org-babel-load-languages '((python . t)))
 
 ;; Ox-latex ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(ensure-package-installed 'tramp)
 (require 'ox-latex)
 (add-to-list 'org-latex-classes
              '("beamer"
