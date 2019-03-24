@@ -90,3 +90,6 @@
 ;; Include _ (underscore) as a part of word
 ;; Before * (asterisk search) did not work for words with underscore at the front of the word
 (modify-syntax-entry ?_ "w")
+
+;; helm-ag
+(ensure-package-installed 'helm-ag)
