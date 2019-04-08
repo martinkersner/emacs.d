@@ -7,6 +7,10 @@
 ; User defined lisp functions are stored in lisp directory
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
 (defun ensure-package-installed (&rest packages)
   "Assure every package is installed, ask for installation if it’s not.
    Return a list of installed packages or nil for every skipped package."
@@ -52,8 +56,8 @@
 (ensure-package-installed 'use-package)
 
 ;; try
-(ensure-package-installed 'try)
-(require 'try)
+(use-package try
+  :ensure t)
 
 ;; Modules
 (load-user-file "pretty.el")

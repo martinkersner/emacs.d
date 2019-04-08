@@ -16,4 +16,5 @@
 (c-set-offset (quote cpp-macro) 0 nil)
 
 ;; cmake
-(ensure-package-installed 'cmake-mode)
+(use-package cmake-mode
+  :ensure t)

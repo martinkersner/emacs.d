@@ -1,24 +1,24 @@
 ;; Evil-leader ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; vim-like leader functionality
 ;; need to be defined before evil mode!
-(ensure-package-installed 'evil-leader)
-(require 'evil-leader)
+(use-package evil-leader
+  :ensure t)
 (global-evil-leader-mode)
 (evil-leader/set-key "e" 'find-file)
 
 
 ;; Evil ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(ensure-package-installed 'evil)
-(require 'evil)
+(use-package evil
+  :ensure t)
 (evil-mode 1)
 
 
 ;; Magit ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Display diff of the current file C-x v =
-(ensure-package-installed 'magit)
-(require 'magit)
-(ensure-package-installed 'evil-magit)
-(require 'evil-magit)
+(use-package magit
+  :ensure t)
+(use-package evil-magit
+  :ensure t)
 (setq magit-diff-refine-hunk 'all)
 
 
@@ -47,12 +47,12 @@
 
 
 ;; Org ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(ensure-package-installed 'org)
-(require 'org)
-(ensure-package-installed 'org-download)
-(require 'org-download)
-(ensure-package-installed 'org-bullets)
-(require 'org-bullets)
+(use-package org
+  :ensure t)
+(use-package org-download
+  :ensure t)
+(use-package org-bullets
+  :ensure t)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
 (setq org-image-actual-width nil)
 (setq org-todo-keywords
@@ -81,8 +81,8 @@
 
 
 ;; Multiple cursors ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(ensure-package-installed 'multiple-cursors)
-(require 'multiple-cursors)
+(use-package multiple-cursors
+  :ensure t)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
@@ -90,8 +90,8 @@
 
 
 ;; Neotree ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(ensure-package-installed 'neotree)
-(require 'neotree)
+(use-package neotree
+  :ensure t)
 (global-set-key [f8] 'neotree-toggle)
 ;(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (evil-define-key 'normal neotree-mode-map (kbd "TAB") 'neotree-enter)
@@ -111,8 +111,8 @@
 
 
 ;; Tramp ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(ensure-package-installed 'tramp)
-(require 'tramp)
+(use-package tramp
+  :ensure t)
 (setq tramp-default-method "ssh")
 (setq-default explicit-shell-file-name "/bin/bash")
 (setq tramp-shell-prompt-pattern "^[^$>\n]*[#$%>] *\\(\[[0-9;]*[a-zA-Z] *\\)*")
@@ -121,33 +121,35 @@
 
 ;; Ag ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; M-x ag-project
-(ensure-package-installed 'ag)
-(require 'ag)
+(use-package ag
+  :ensure t)
 
 
 ;; Projectile ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; C-c p h
-(ensure-package-installed 'projectile)
-(require 'projectile)
+(use-package projectile
+  :ensure t)
 (projectile-mode +1)
 ;;(define-key projectile-mode-map (kbd "s-p") 'projectile-command-map)
 ;;(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 
 ;; Yasnippet ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(ensure-package-installed 'yasnippet)
-(require 'yasnippet)
-(ensure-package-installed 'yasnippet-snippets)
-(require 'yasnippet-snippets)
+(use-package yasnippet
+  :ensure t)
+(use-package yasnippet-snippets
+  :ensure t)
 (yas-reload-all)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 
 
 ;; Helm ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(ensure-package-installed 'helm)
-(require 'helm)
-(ensure-package-installed 'helm-projectile)
-(require 'helm-projectile)
+(use-package helm
+  :ensure t)
+(use-package helm-projectile
+  :ensure t)
+(use-package helm-ag
+  :ensure t)
 (helm-mode 1)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -160,9 +162,9 @@
 (global-set-key (kbd "C-c p h") 'helm-projectile)
 
 ;; markdown-mode
-(ensure-package-installed 'markdown-mode)
-(require 'markdown-mode)
+(use-package markdown-mode
+  :ensure t)
 
 ;; shader-mode
-(ensure-package-installed 'shader-mode)
-(require 'shader-mode)
+(use-package shader-mode
+  :ensure t)

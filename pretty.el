@@ -2,8 +2,8 @@
 (setq inhibit-splash-screen t)
 
 ;; Smart-mode-line ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(ensure-package-installed 'smart-mode-line)
-(require 'smart-mode-line)
+(use-package smart-mode-line
+  :ensure t)
 (setq powerline-arrow-shape 'curve)
 (setq powerline-default-separator-dir '(right . left))
 (setq sml/theme 'dark)
@@ -39,7 +39,7 @@
 
 ;; Linum-relative ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; relative line numbers
-(ensure-package-installed 'linum-relative)
-(require 'linum-relative)
+(use-package linum-relative
+  :ensure t)
 (linum-relative-mode)
 (setq linum-relative-current-symbol "")
