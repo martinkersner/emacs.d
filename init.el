@@ -51,6 +51,10 @@
 ;; Use-package ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (ensure-package-installed 'use-package)
 
+;; try
+(ensure-package-installed 'try)
+(require 'try)
+
 ;; Modules
 (load-user-file "pretty.el")
 (load-user-file "host.el")
