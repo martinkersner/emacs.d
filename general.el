@@ -90,3 +90,9 @@
 ;; Include _ (underscore) as a part of word
 ;; Before * (asterisk search) did not work for words with underscore at the front of the word
 (modify-syntax-entry ?_ "w")
+
+;; dired-git-info
+(use-package dired-git-info
+  :ensure t)
+(with-eval-after-load 'dired
+  (define-key dired-mode-map ")" 'dired-git-info-mode))
