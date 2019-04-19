@@ -96,3 +96,10 @@
   :ensure t)
 (with-eval-after-load 'dired
   (define-key dired-mode-map ")" 'dired-git-info-mode))
+
+;; helm-ag
+(ensure-package-installed 'helm-ag)
+(global-set-key (kbd "C-c a g") 'helm-projectile-ag)
+
+;; Don't ask if modified file on the disk should be reread
+(global-auto-revert-mode 1)
