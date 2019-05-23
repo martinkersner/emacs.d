@@ -103,3 +103,8 @@
 
 ;; Don't ask if modified file on the disk should be reread
 (global-auto-revert-mode 1)
+
+;; git-gutter show changes from git
+(use-package git-gutter
+  :ensure t)
+(global-git-gutter-mode +1)
