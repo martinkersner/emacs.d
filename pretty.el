@@ -9,8 +9,11 @@
 (setq sml/theme 'dark)
 (sml/setup)
 
-(global-linum-mode t)
-(setq linum-format "%d ")
+;; line numbers
+(global-display-line-numbers-mode t)
+(setq display-line-numbers "%4d \u2502 ")
+(setq display-line-numbers-type 'relative)
+
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (load-theme 'manoj-dark)
@@ -36,10 +39,3 @@
                100)
           '(85 . 50) '(100 . 100)))))
  (global-set-key (kbd "C-c t") 'toggle-transparency)
-
-;; Linum-relative ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; relative line numbers
-(use-package linum-relative
-  :ensure t)
-(linum-relative-mode)
-(setq linum-relative-current-symbol "")
