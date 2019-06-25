@@ -108,3 +108,8 @@
 (use-package git-gutter
   :ensure t)
 (global-git-gutter-mode +1)
+
+;; yaml-mode
+(use-package yaml-mode
+  :ensure t)
+(add-to-list 'auto-mode-alist '("\\.yaml\\'" . yaml-mode))
