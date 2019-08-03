@@ -48,3 +48,7 @@
      (evil-make-overriding-map helm-gtags-mode-map 'normal)
      ;; force update evil keymaps after ggtags-mode loaded
      (add-hook 'ggtags-mode-hook #'evil-normalize-keymaps)))
+
+
+;; Compile
+(setq compilation-scroll-output t)
