@@ -19,6 +19,10 @@
 (use-package cmake-mode
   :ensure t)
 
+;; helm-gtags
+(use-package helm-gtags
+  :ensure t)
+
 (setq
  helm-gtags-ignore-case t
  helm-gtags-auto-update t
