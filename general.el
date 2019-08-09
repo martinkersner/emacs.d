@@ -116,3 +116,7 @@
 
 ;; show cursor position within line
 (column-number-mode 1)
+
+;; dired-x
+(use-package dired-x
+  :ensure nil)
