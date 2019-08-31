@@ -55,4 +55,6 @@
 
 
 ;; Compile
+(setq compilation-auto-jump-to-first-error t)
+(setq compilation-skip-threshold 2)
 (setq compilation-scroll-output t)
