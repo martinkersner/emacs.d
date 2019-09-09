@@ -47,13 +47,6 @@
 (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
 (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
 
-(eval-after-load 'helm-gtags
-  '(progn
-     (evil-make-overriding-map helm-gtags-mode-map 'normal)
-     ;; force update evil keymaps after ggtags-mode loaded
-     (add-hook 'ggtags-mode-hook #'evil-normalize-keymaps)))
-
-
 ;; Compile
 (setq compilation-auto-jump-to-first-error t)
 (setq compilation-skip-threshold 2)

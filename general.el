@@ -2,11 +2,6 @@
 (setq x-select-enable-clipboard t)
 (global-set-key (kbd "C-S-p") 'x-clipboard-yank)
 
-; Enable CTRL-u for going upward
-; Must be run before loading evil mode
-; Evil mode is loaded even in evil-leader
-(setq evil-want-C-u-scroll t)
-
 ;; Don't make backup files
 (setq make-backup-files nil)
 
@@ -20,10 +15,6 @@
 ;; Similar to =gf= in vim
 ;; M-x ffap
 (ffap-bindings)
-
-;; Treat an Emacs symbol as a word
-(with-eval-after-load 'evil
-    (defalias #'forward-evil-word #'forward-evil-symbol))
 
 ;; Keep search highlighted
 ;; TODO add to leader-space M-x lazy-highlight-cleanup
