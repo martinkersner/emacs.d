@@ -111,3 +111,12 @@
 ;; dired-x
 (use-package dired-x
   :ensure nil)
+
+;; hippie
+(global-set-key [remap dabbrev-expand] 'hippie-expand)
+
+
+;; expand-region
+(use-package expand-region
+  :ensure nil)
+(global-set-key (kbd "C-=") 'er/expand-region)
