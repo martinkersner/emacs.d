@@ -119,13 +119,20 @@
 ;; projectile-find-other-file
 (global-set-key (kbd "C-c o") 'projectile-find-other-file)
 
-;; iy-go-to-char
-(use-package iy-go-to-char
-  :ensure t)
-(global-set-key (kbd "C-c f") 'iy-go-to-char)
-(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
-
 ;; dired-x
 ;; enables to jump directly to dired with C-x j
 (use-package dired-x
   :ensure nil)
+
+;; iy-go-to-char
+(use-package iy-go-to-char
+  :ensure t)
+
+;; key-chord
+;; detect press of multiple keys at the same time
+(use-package key-chord
+  :ensure t)
+(setq key-chord-two-keys-delay 0.1)
+(key-chord-define-global "fg" 'iy-go-to-char)
+(key-chord-define-global "ff" 'iy-go-to-char-continue)
+(key-chord-define-global "df" 'iy-go-to-char-backward)
