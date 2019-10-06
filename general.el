@@ -124,3 +124,8 @@
   :ensure t)
 (global-set-key (kbd "C-c f") 'iy-go-to-char)
 (global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
+
+;; dired-x
+;; enables to jump directly to dired with C-x j
+(use-package dired-x
+  :ensure nil)
