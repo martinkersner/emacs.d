@@ -132,7 +132,13 @@
 ;; detect press of multiple keys at the same time
 (use-package key-chord
   :ensure t)
+(key-chord-mode 1)
 (setq key-chord-two-keys-delay 0.1)
 (key-chord-define-global "fg" 'iy-go-to-char)
 (key-chord-define-global "ff" 'iy-go-to-char-continue)
 (key-chord-define-global "df" 'iy-go-to-char-backward)
+
+;; ace-mode
+(use-package ace-jump-mode
+  :ensure t)
+(global-set-key (kbd "C-0") 'ace-jump-mode)
