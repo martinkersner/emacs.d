@@ -108,15 +108,19 @@
 ;; show cursor position within line
 (column-number-mode 1)
 
-;; dired-x
-(use-package dired-x
-  :ensure nil)
-
 ;; hippie
 (global-set-key [remap dabbrev-expand] 'hippie-expand)
 
-
 ;; expand-region
 (use-package expand-region
-  :ensure nil)
+  :ensure t)
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+;; projectile-find-other-file
+(global-set-key (kbd "C-c o") 'projectile-find-other-file)
+
+;; iy-go-to-char
+(use-package iy-go-to-char
+  :ensure t)
+(global-set-key (kbd "C-c f") 'iy-go-to-char)
+(global-set-key (kbd "C-c F") 'iy-go-to-char-backward)
