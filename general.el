@@ -132,3 +132,8 @@
 (use-package ace-jump-mode
   :ensure t)
 (global-set-key (kbd "C-0") 'ace-jump-mode)
+
+;; Flycheck
+(use-package flycheck
+  :ensure t
+  :init (global-flycheck-mode))

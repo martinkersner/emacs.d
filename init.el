@@ -69,3 +69,4 @@
 
 ;; Abbreavitions
 (load-user-file "lisp/abbrev.el")
+(put 'scroll-left 'disabled nil)
