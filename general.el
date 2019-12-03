@@ -124,6 +124,9 @@
 (use-package dired-x
   :ensure nil)
 
+;; dired human readable size
+(setq dired-listing-switches "-alh")
+
 ;; iy-go-to-char
 (use-package iy-go-to-char
   :ensure t)
