@@ -13,5 +13,6 @@
 (elpy-enable)
 (setq python-shell-completion-native-enable nil)
 (setq elpy-shell-echo-input nil)
+(setq elpy-rpc-backend "jedi")
 (define-key python-mode-map (kbd "C-]") #'elpy-goto-definition)
 (elpy-set-test-runner #'elpy-test-pytest-runner)
