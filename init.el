@@ -66,6 +66,7 @@
 (load-user-file "etc.el")
 (load-user-file "py.el")
 (load-user-file "cpp.el")
+(load-user-file "elixir.el")
 
 ;; Abbreavitions
 (load-user-file "lisp/abbrev.el")
