@@ -127,6 +127,11 @@
 ;; dired human readable size
 (setq dired-listing-switches "-alh")
 
+;; async mode
+(autoload 'dired-async-mode "dired-async.el" nil t)
+(dired-async-mode 1)
+(async-bytecomp-package-mode 1)
+
 ;; iy-go-to-char
 (use-package iy-go-to-char
   :ensure t)
