@@ -80,7 +80,8 @@
 ;; Tramp ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package tramp
   :ensure t)
-(setq tramp-default-method "ssh")
+(tramp-change-syntax 'simplified)
+(customize-set-variable 'tramp-default-method "scp")
 (setq-default explicit-shell-file-name "/bin/bash")
 (setq tramp-shell-prompt-pattern "^[^$>\n]*[#$%>] *\\(\[[0-9;]*[a-zA-Z] *\\)*")
 (setq tramp-verbose 1)
