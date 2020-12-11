@@ -1,3 +1,5 @@
+;;; General ---
+
 ;; Enable pasting from clipboard
 (setq x-select-enable-clipboard t)
 (global-set-key (kbd "C-S-p") 'x-clipboard-yank)
@@ -37,12 +39,14 @@
 (setq vc-follow-symlinks t)
 
 ;; Pdflatex for MacOS
-(getenv "PATH")
- (setenv "PATH"
-(concat
- "/Library/TeX/texbin" ":"
+(cond
+   ((string-equal system-type "darwin")
+    (getenv "PATH")
+    (setenv "PATH"
+            (concat
+             "/Library/TeX/texbin" ":"
 
-(getenv "PATH")))
+             (getenv "PATH")))))
 
 ;; TIPS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -88,13 +92,6 @@
 (with-eval-after-load 'dired
   (define-key dired-mode-map ")" 'dired-git-info-mode))
 
-;; helm-ag
-(cond
-   ((string-equal system-type "darwin")
-    (add-to-list 'exec-path "/usr/local/bin/")))
-(ensure-package-installed 'helm-ag)
-(global-set-key (kbd "C-c a g") 'helm-projectile-ag)
-
 ;; Don't ask if modified file on the disk should be reread
 (global-auto-revert-mode 1)
 
@@ -129,11 +126,6 @@
 
 ;; dired human readable size
 (setq dired-listing-switches "-alh")
-
-;; async mode
-(autoload 'dired-async-mode "dired-async.el" nil t)
-(dired-async-mode 1)
-(async-bytecomp-package-mode 1)
 
 ;; ace-mode
 (use-package ace-jump-mode

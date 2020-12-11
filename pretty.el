@@ -1,3 +1,5 @@
+;;; Pretty --- Settings to change appearance of Emacs
+
 ;; Disable the splash screen
 (setq inhibit-splash-screen t)
 
@@ -7,6 +9,7 @@
 (setq powerline-arrow-shape 'curve)
 (setq powerline-default-separator-dir '(right . left))
 (setq sml/theme 'dark)
+(setq sml/no-confirm-load-theme t)
 (sml/setup)
 
 ;; line numbers

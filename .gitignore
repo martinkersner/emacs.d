@@ -4,3 +4,4 @@ auto-save-list/
 projectile-bookmarks.eld
 host.el
 .DS_Store
+transient/

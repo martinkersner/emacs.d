@@ -1,3 +1,5 @@
+;;; Etc ---
+
 ;; Magit ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Display diff of the current file C-x v =
 (use-package magit
@@ -112,10 +114,15 @@
 ;; Helm ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package helm
   :ensure t)
-(use-package helm-projectile
-  :ensure t)
 (use-package helm-ag
   :ensure t)
+(use-package helm-projectile
+  :ensure t)
+;; binary path for ag
+(cond
+   ((string-equal system-type "darwin")
+    (add-to-list 'exec-path "/usr/local/bin/")))
+(global-set-key (kbd "C-c a g") 'helm-projectile-ag)
 (helm-mode 1)
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (global-set-key (kbd "M-x") 'helm-M-x)

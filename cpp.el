@@ -1,4 +1,5 @@
-;; C++ ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; C++ --- Packages related to C++ development
+
 (global-set-key (kbd "<f5>") 'compile)
 ;; indent curly braces same as parent statement
 (setq c-default-style "linux" c-basic-offset 4)

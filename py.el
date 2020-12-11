@@ -1,3 +1,5 @@
+;;; Python --- Packages related to Python development
+
 ;; Virtualenvwrapper ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (use-package virtualenvwrapper
   :ensure t)
