@@ -135,10 +135,6 @@
 (dired-async-mode 1)
 (async-bytecomp-package-mode 1)
 
-;; iy-go-to-char
-(use-package iy-go-to-char
-  :ensure t)
-
 ;; ace-mode
 (use-package ace-jump-mode
   :ensure t)
