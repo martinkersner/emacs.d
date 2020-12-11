@@ -143,3 +143,9 @@
 (global-set-key (kbd "C-S-j") 'windmove-down)
 (global-set-key (kbd "C-S-h") 'windmove-left)
 (global-set-key (kbd "C-S-l") 'windmove-right)
+
+
+;; ispell
+(cond
+   ((string-equal system-type "darwin")
+    (setq ispell-program-name "/usr/local/bin/ispell")))

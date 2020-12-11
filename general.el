@@ -89,6 +89,9 @@
   (define-key dired-mode-map ")" 'dired-git-info-mode))
 
 ;; helm-ag
+(cond
+   ((string-equal system-type "darwin")
+    (add-to-list 'exec-path "/usr/local/bin/")))
 (ensure-package-installed 'helm-ag)
 (global-set-key (kbd "C-c a g") 'helm-projectile-ag)
 
