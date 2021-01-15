@@ -78,6 +78,12 @@
 ;; Helm semantic-mode
 ;; helm-semantic-or-imenu
 (semantic-mode 1)
+
+;; https://stackoverflow.com/a/56618164
+(setq semantic-new-buffer-setup-functions
+      '((c-mode                . semantic-default-c-setup)
+        (c++-mode              . semantic-default-c-setup)
+        ))
 (setq helm-semantic-fuzzy-match t
       helm-imenu-fuzzy-match    t)
 (global-set-key (kbd "C-x p") 'helm-semantic-or-imenu)
