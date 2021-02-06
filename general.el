@@ -1,5 +1,18 @@
 ;;; General ---
 
+;; remap M-x to C-x-m or C-c-m
+(global-set-key "\C-x\C-m" 'helm-M-x)
+(global-set-key "\C-c\C-m" 'helm-M-x)
+
+;; delete last word with C-w
+;; delete region with C-x-k or C-c-k
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+(global-set-key "\C-c\C-k" 'kill-region)
+
+;;
+(defalias 'qrr 'query-replace-regexp)
+
 ;; Enable pasting from clipboard
 (setq x-select-enable-clipboard t)
 (global-set-key (kbd "C-S-p") 'x-clipboard-yank)
