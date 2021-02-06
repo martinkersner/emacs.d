@@ -16,5 +16,15 @@
 (setq python-shell-completion-native-enable nil)
 (setq elpy-shell-echo-input nil)
 (setq elpy-rpc-backend "jedi")
-(define-key python-mode-map (kbd "C-]") #'elpy-goto-definition)
-(elpy-set-test-runner #'elpy-test-pytest-runner)
+;; (define-key python-mode-map (kbd "C-]") #'elpy-goto-definition)
+;; (elpy-set-test-runner #'elpy-test-pytest-runner)
+
+;; load python packages
+(use-package pyvenv
+  :ensure t)
+(pyvenv-workon "emacs")
+
+;; Enable autopep8
+(use-package py-autopep8
+  :ensure t)
+(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
