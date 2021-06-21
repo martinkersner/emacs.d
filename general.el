@@ -164,3 +164,9 @@
 ;; docker
 (use-package dockerfile-mode
   :ensure t)
+
+
+;; firestarter - automatic script execution on save
+(firestarter-mode)
+(put 'firestarter 'safe-local-variable 'identity)
+(put 'firestarter 'firestarter-type t)
