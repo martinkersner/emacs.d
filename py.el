@@ -1,8 +1,8 @@
 ;;; Python --- Packages related to Python development
 
 ;; Virtualenvwrapper ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package virtualenvwrapper
-  :ensure t)
+;; (use-package virtualenvwrapper
+  ;; :ensure t)
 ;; if you want interactive shell support
 (venv-initialize-interactive-shells)
 ;; if you want eshell support
