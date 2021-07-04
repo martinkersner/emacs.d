@@ -68,6 +68,7 @@
 (load-user-file "cpp.el")
 (load-user-file "elixir.el")
 (load-user-file "web.el")
+(load-user-file "app-dev.el")
 
 ;; Abbreavitions
 (load-user-file "lisp/abbrev.el")
