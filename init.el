@@ -69,6 +69,8 @@
 (load-user-file "elixir.el")
 (load-user-file "web.el")
 (load-user-file "app-dev.el")
+(load-user-file "web3.el")
+(load-user-file "server.el")
 
 ;; Abbreavitions
 (load-user-file "lisp/abbrev.el")
