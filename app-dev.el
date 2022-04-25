@@ -23,9 +23,4 @@
 
 (setq lsp-ui-doc-enable nil)
 
-
-(add-hook 'lsp-ui-doc-frame-hook
-          (lambda (frame _w)
-            (set-face-attribute 'default frame :font "Terminus" :height 100)))
-
 (global-set-key "\C-c\C-d" 'lsp-ui-doc-show)
