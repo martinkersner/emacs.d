@@ -15,7 +15,6 @@
 ;; line numbers
 (global-display-line-numbers-mode t)
 (setq display-line-numbers "%4d \u2502 ")
-(setq display-line-numbers-type 'relative)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1)
