@@ -41,3 +41,13 @@
                100)
           '(85 . 50) '(100 . 100)))))
  (global-set-key (kbd "C-c t") 'toggle-transparency)
+
+(add-hook 'lsp-ui-doc-frame-hook
+          (lambda (frame _w)
+            (set-face-attribute 'default frame :font "Terminus" :height 300)))
+(set-face-attribute 'default nil :height 105)
+
+;; (add-hook 'lsp-ui-doc-frame-hook
+;;           (lambda (frame _w)
+;;             (set-face-attribute 'default frame :font "Terminus" :height 300)))
+;; (set-face-attribute 'default nil :height 185)
