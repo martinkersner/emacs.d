@@ -167,6 +167,9 @@
 
 
 ;; firestarter - automatic script execution on save
-(firestarter-mode)
+(use-package firestarter
+  :ensure t
+  :init
+  (firestarter-mode))
 (put 'firestarter 'safe-local-variable 'identity)
 (put 'firestarter 'firestarter-type t)
