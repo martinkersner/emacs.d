@@ -3,8 +3,11 @@
   :ensure t)
 (setq emmet-move-cursor-between-quotes t)
 
-;;;; Typescript
-;;;; https://github.com/ananthakumaran/tide
+(use-package tide
+  :ensure t)
+;; (use-package company :ensure t)
+;; (use-package flycheck :ensure t)
+
 (defun setup-tide-mode ()
   (interactive)
   (tide-setup)
@@ -24,3 +27,16 @@
 (add-hook 'before-save-hook 'tide-format-before-save)
 
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
+
+(use-package web-mode
+  :ensure t)
+(require 'web-mode)
+
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (when (string-equal "tsx" (file-name-extension buffer-file-name))
+              (setup-tide-mode))))
+
+;; enable typescript - tslint checker
+(flycheck-add-mode 'typescript-tslint 'web-mode)
