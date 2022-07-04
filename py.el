@@ -1,5 +1,10 @@
 ;;; Python --- Packages related to Python development
 
+(use-package pyvenv
+  :ensure t)
+
+(setq pyvenv-virtualenvwrapper-python "python3")
+
 (pyvenv-workon "emacs")
 
 ;; Elpy
