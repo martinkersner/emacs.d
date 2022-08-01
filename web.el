@@ -40,3 +40,8 @@
 
 ;; enable typescript - tslint checker
 (flycheck-add-mode 'typescript-tslint 'web-mode)
+
+;; svelte
+(use-package svelte-mode
+  :ensure t)
+(require 'svelte-mode)
