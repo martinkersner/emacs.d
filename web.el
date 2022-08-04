@@ -32,6 +32,7 @@
   :ensure t)
 (require 'web-mode)
 
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (add-hook 'web-mode-hook
           (lambda ()
@@ -45,3 +46,9 @@
 (use-package svelte-mode
   :ensure t)
 (require 'svelte-mode)
+
+;; js
+(use-package prettier-js
+  :ensure t)
+(require 'prettier-js)
+(add-hook 'web-mode-hook 'prettier-js-mode)
