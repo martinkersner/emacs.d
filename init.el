@@ -71,6 +71,7 @@
 (load-user-file "app-dev.el")
 (load-user-file "web3.el")
 (load-user-file "server.el")
+(load-user-file "rust.el")
 
 ;; Abbreavitions
 (load-user-file "lisp/abbrev.el")
