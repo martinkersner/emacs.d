@@ -31,7 +31,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(package-selected-packages
+   '(solidity-flycheck graphql-mode rust-mode flymake-solidity prettier-js svelte-mode web-mode tide pyvenv-mode nginx-mode solidity-mode lsp-dart dart-mode lsp-mode emmet-mode elixir-mode helm-gtags cmake-mode py-isort elpy yasnippet-snippets yaml-mode use-package try smart-mode-line shader-mode pyvenv org-download org-bullets neotree multiple-cursors markdown-mode magit helm-projectile helm-ag git-gutter flycheck firestarter expand-region dockerfile-mode dired-git-info ag ace-jump-mode)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
