@@ -51,3 +51,5 @@
 ;;           (lambda (frame _w)
 ;;             (set-face-attribute 'default frame :font "Terminus" :height 300)))
 ;; (set-face-attribute 'default nil :height 185)
+
+(setq require-final-newline t)
