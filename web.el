@@ -3,9 +3,14 @@
   :ensure t)
 (setq emmet-move-cursor-between-quotes t)
 
+(use-package typescript-mode
+  :ensure t)
+
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+
 (use-package tide
   :ensure t)
-;; (use-package company :ensure t)
+(use-package company :ensure t)
 ;; (use-package flycheck :ensure t)
 
 (defun setup-tide-mode ()
@@ -24,31 +29,27 @@
 (setq company-tooltip-align-annotations t)
 
 ;; formats the buffer before saving
-(add-hook 'before-save-hook 'tide-format-before-save)
-
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
 (use-package web-mode
   :ensure t)
 (require 'web-mode)
 
+(add-to-list 'auto-mode-alist '("\\.mjs\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.cts\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 (add-hook 'web-mode-hook
           (lambda ()
-            (when (string-equal "tsx" (file-name-extension buffer-file-name))
+            (when (string-equal "ts" (file-name-extension buffer-file-name))
               (setup-tide-mode))))
 
 ;; enable typescript - tslint checker
 (flycheck-add-mode 'typescript-tslint 'web-mode)
-
-;; svelte
-(use-package svelte-mode
-  :ensure t)
-(require 'svelte-mode)
 
 ;; js
 (use-package prettier-js
   :ensure t)
 (require 'prettier-js)
 (add-hook 'web-mode-hook 'prettier-js-mode)
+(add-hook 'typescript-mode-hook 'prettier-js-mode)
