@@ -59,6 +59,8 @@
 (use-package try
   :ensure t)
 
+(setq load-prefer-newer t)
+
 ;; Modules
 (load-user-file "pretty.el")
 (load-user-file "host.el")
