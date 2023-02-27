@@ -68,7 +68,7 @@
 (load-user-file "etc.el")
 (load-user-file "py.el")
 (load-user-file "cpp.el")
-(load-user-file "elixir.el")
+;; (load-user-file "elixir.el")
 (load-user-file "web.el")
 (load-user-file "app-dev.el")
 (load-user-file "web3.el")
