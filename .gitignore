@@ -5,3 +5,4 @@ projectile-bookmarks.eld
 host.el
 .DS_Store
 transient/
+.mc-lists.el

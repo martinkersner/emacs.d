@@ -4,6 +4,9 @@
 ; Activate installed packages
 (package-initialize)
 
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 ; User defined lisp functions are stored in lisp directory
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 

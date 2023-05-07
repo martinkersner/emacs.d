@@ -7,9 +7,9 @@
 ;;   :ensure t)
 ;; (require 'solidity-flycheck)
 
-;; (use-package solidity-mode
-;;   :ensure t)
-;; (require 'solidity-mode)
+(use-package solidity-mode
+  :ensure t)
+(require 'solidity-mode)
 
 ;; (add-to-list 'load-path "/Users/martin/git/emacs-solidity/")
 ;; (load "solidity-common.el")

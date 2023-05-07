@@ -36,6 +36,7 @@
 (require 'web-mode)
 
 (add-to-list 'auto-mode-alist '("\\.mjs\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.cjs\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.cts\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.ts\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
