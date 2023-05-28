@@ -11,16 +11,16 @@
   :ensure t)
 (require 'solidity-mode)
 
-;; (add-to-list 'load-path "/Users/martin/git/emacs-solidity/")
-;; (load "solidity-common.el")
-;; (load "solidity-flycheck.el")
-;; (load "solidity-mode.el")
-
 ;; (use-package solidity-flycheck
 ;;     :hook solidity-mode
 ;;     :config
 ;;     (setq solidity-solc-path "/opt/homebrew/bin/solcjs")
 ;;     )
 
-;; (use-package graphql-mode
-;;   :ensure t)
+(use-package dumb-jump
+  :ensure t)
+(require 'dumb-jump)
+(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+(setq xref-show-definitions-function #'xref-show-definitions-completing-read)
+(setq xref-prompt-for-identifier nil)
+(setq xref-auto-jump-to-first-xref nil)
