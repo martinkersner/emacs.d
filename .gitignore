@@ -7,3 +7,4 @@ host.el
 transient/
 .mc-lists.el
 projects
+semanticdb
