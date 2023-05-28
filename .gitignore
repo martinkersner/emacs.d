@@ -6,3 +6,4 @@ host.el
 .DS_Store
 transient/
 .mc-lists.el
+projects
