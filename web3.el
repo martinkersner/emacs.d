@@ -24,3 +24,12 @@
 (setq xref-show-definitions-function #'xref-show-definitions-completing-read)
 (setq xref-prompt-for-identifier nil)
 (setq xref-auto-jump-to-first-xref nil)
+
+(use-package company-solidity
+  :ensure t)
+(require 'company-solidity)
+(add-hook 'solidity-mode-hook
+	(lambda ()
+	(set (make-local-variable 'company-backends)
+		(append '((company-solidity company-capf company-dabbrev-code))
+			company-backends))))
