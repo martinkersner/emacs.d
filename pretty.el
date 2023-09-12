@@ -21,7 +21,7 @@
 (load-theme 'manoj-dark)
 (toggle-scroll-bar -1)
 (global-hl-line-mode +1)
-(set-face-underline-p 'highlight nil)
+; (set-face-underline-p 'highlight nil)
 
 ;; Make left and righ fringe 1px
 (set-fringe-mode '(1 . 1))
