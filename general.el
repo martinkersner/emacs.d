@@ -173,3 +173,10 @@
   (firestarter-mode))
 (put 'firestarter 'safe-local-variable 'identity)
 (put 'firestarter 'firestarter-type t)
+
+;; LSP
+(use-package lsp-mode
+  :ensure t)
+
+;; Don't open new window for error
+(setq warning-minimum-level :error)

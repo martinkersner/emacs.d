@@ -78,6 +78,9 @@
 (load-user-file "web3.el")
 (load-user-file "server.el")
 (load-user-file "rust.el")
+(load-user-file "go.el")
+(load-user-file "github-copilot.el")
+(load-user-file "ai.el")
 
 ;; Abbreavitions
 (load-user-file "lisp/abbrev.el")

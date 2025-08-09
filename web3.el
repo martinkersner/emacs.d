@@ -36,11 +36,12 @@
 ;; (add-hook 'after-init-hook 'global-company-mode)
 
 
-(defun format-solidity ()
-  (when (eq major-mode 'solidity-mode)
-    (shell-command (format "forge fmt %s" buffer-file-name))
-    (revert-buffer :ignore-auto :noconfirm)
-    )
-  )
+;; (defun format-solidity ()
+;;   (when (eq major-mode 'solidity-mode)
+;;     (save-buffer)
+;;     (shell-command (format "forge fmt %s" buffer-file-name))
+;;     (revert-buffer :ignore-auto :noconfirm)
+;;     )
+;;   )
 
-(add-hook 'before-save-hook #'format-solidity)
+;; (add-hook 'before-save-hook #'format-solidity)
